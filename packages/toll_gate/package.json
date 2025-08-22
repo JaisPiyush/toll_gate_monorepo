@@ -1,0 +1,57 @@
+{
+  "name": "toll_gate",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/edge/index.d.ts",
+      "browser": "./dist/edge/index.js",
+      "worker": "./dist/edge/index.js",
+      "node": "./dist/node/index.js",
+      "import": "./dist/node/index.js",
+      "require": "./dist/node/index.cjs",
+      "default": "./dist/edge/index.js"
+    },
+    "./edge": {
+      "types": "./dist/edge/edge.d.ts",
+      "import": "./dist/edge/edge.js",
+      "default": "./dist/edge/edge.js"
+    },
+    "./node": {
+      "types": "./dist/node/node.d.ts",
+      "import": "./dist/node/node.js",
+      "require": "./dist/node/node.cjs",
+      "default": "./dist/node/node.js"
+    }
+  },
+  "main": "./dist/node/index.cjs",
+  "module": "./dist/node/index.js",
+  "types": "./dist/edge/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup ",
+    "dev": "tsup  --watch",
+    "lint": "biome lint .",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.3",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  }
+}
